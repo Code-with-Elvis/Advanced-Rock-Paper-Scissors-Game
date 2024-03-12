@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Game</title>
+  <link rel="icon" href="./images/Logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url("./images/bg.jpg");
+      display: grid;
+      place-items: center;
+    }
+
+    .login--form {
+      border: 1.5px solid #07c707;
+      border-radius: 15px;
+    }
+    .login--form  form {
+      padding:40px 20px;
+      width: 400px;
+      text-align: center;
+    }
+    .login--form h2 {
+      color: #FFF;
+      margin-bottom: 50px;
+      font-size: 20px;
+      font-family: cursive;
+    }
+    .login--form .input-field {
+      width: 100%;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .login--form .input-field input {
+      width: 100%;
+      padding: 12px 10px;
+      padding-right: 40px;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid #FFF;
+      color: #EEE;
+      border-radius: 3px;
+    }
+    .login--form .input-field input:focus {
+      border-color: #07c707;
+    }
+    .login--form .input-field input::placeholder {
+      color: #CCC;
+    }
+    .input-field i {
+      position: absolute;
+      right: 10px;
+      transform: translateY(-50%);
+      top: 50%;
+      color: #EEE;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      background-color: orangered;
+      color: #FFF;
+      border: none;
+      box-shadow: 0 0 0 1px #000, 0 0 0 2px #FFF;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    .login--form p {
+      margin-top: 25px;
+      color: #FFF;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .login--form p a,  .login--form p span {
+      color: #07c707;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .login--form p span {
+      white-space: nowrap;
+    }
+    .preloader.active {
+     visibility: visible;
+    }
+    .preloader {
+      background-color: #ffffffa9;
+      position: fixed;
+      inset: 0;
+      place-items: center;
+      z-index: 600;
+      display: grid;
+      visibility: hidden;
+      transition: .1s ease all;
+    }
+    .preloader img {
+      filter: sepia(100%);
+    }
+
+
+    .validate {
+      position: fixed;
+      width: 420px;
+      top: 20px;
+      transform: translateX(-50%);
+      left: 50%;
+      background-color: #fdc6af;
+      padding: 20px 20px;
+      padding-right: 45px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      display: none;
+    }
+    .validate.active {
+      display: block;
+    }
+    .validate.error {
+      background-color: #fdc6af;
+    }
+    .validate.success {
+      background-color: #d5fad5;
+    }
+    .validate i {
+      position: absolute;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      top: 10px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 15px;
+      color: #FFF;
+      font-size: 12px;
+      padding: 0 10px;
+      width: 100%;
+      text-align: center;
+    }
+    @media screen and (max-width: 500px) {
+      body {
+        padding: 40px 10px;
+        
+      }
+      .login--form  form {
+        width: 100%;
+      }
+      .validate {
+        width: 94%;
+      }
+    }
+    @media screen and (max-height: 550px) {
+      footer {
+        display: none;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <section class="login--form">
+    <form action="">
+      <h2>Welcome To RSP Game</h2>
+      <div class="input-field">
+        <input id="email" type="email" placeholder="Email" required autocomplete="false">
+      </div>
+      <div class="input-field">
+        <input id="password" type="password" placeholder="Password" required autocomplete="false">
+        <i class="bi bi-eye-slash"></i>
+      </div>
+      <button>Submit</button>
+      <p>Have no account? <a href="./Register.html">Sign Up</a> or use <span class="demo-btn">Demo Account</span></p>
+    </form>
+  </section>
+
+  <p class="validate">Lorem ipsum dolor sit amet consectetur adipisicing elit. <i class="bi bi-x"></i></p>
+
+  <div class="preloader">
+    <img src="./images/preloader.gif" alt="preloader">
+  </div>
+
+  <footer>
+    <p>&copy; Elvis Okumu #RSP game 2024</p>
+  </footer>
+
+  <script src="./Login.js"></script>
+</body>
+</html>

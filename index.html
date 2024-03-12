@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/Logo.png" />
+    <title>RSP Game</title>
+    <link rel="stylesheet" href="./Index.css" />
+  </head>
+  <body>
+    <section class="container no-account">
+      <header>
+        <a href="#" class="logo">RSP Game</a>
+        <div class="buttons">
+          <a href="./Login.html">Login</a>
+          <a href="./Register.html">Sign Up</a>
+        </div>
+      </header>
+      <article class="main">
+        <img src="./images/bg.jpg" alt="game image" />
+        <div class="details">
+          <h2>Rock-Paper-Scissors <br />🤘✋✌️</h2>
+          <p class="txt">
+            The rock-paper-scissors game is a simple yet fascinating hand game
+            played between two people. Here’s the concept behind it:
+          </p>
+
+          <h4>Basic Rules:</h4>
+          <dl>
+            <dt>The game has three possible outcomes:</dt>
+            <dd>Draw: If both players choose the same shape.</dd>
+            <dd>
+              Win: Rock beats scissors, scissors cut paper, and paper covers
+              rock.
+            </dd>
+            <dd>
+              Loss: Rock loses to paper, paper loses to scissors, and scissors
+              lose to rock.
+            </dd>
+          </dl>
+          <h4>Origins</h4>
+          <ul>
+            <li>
+              The earliest form of this game originated in China and was later
+              imported into Japan.
+            </li>
+            <li>
+              In Japan, it reached its modern standardized form, known as
+              “jan-ken-pon”.
+            </li>
+            <li>
+              From Japan, it spread throughout the world in the early 20th
+              century.
+            </li>
+          </ul>
+          <h4>Fair Choosing Method:</h4>
+          <ul>
+            <li>
+              Rock-paper-scissors is often used as a fair method for making
+              decisions or settling disputes.
+            </li>
+            <li>
+              It’s similar to coin flipping, drawing straws, or throwing dice.
+            </li>
+            <li>
+              Unlike truly random methods, it can be played with some degree of
+              skill by recognizing opponents’ behavior.
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!--==== Successful Login ====-->
+    <section class="container successful-login">
+      <header>
+        <a href="#" class="logo">RSP Game</a>
+        <h4 id="player-name">Player: Anonymous</h4>
+        <div class="player">
+          <div class="avatar"><span>AD</span></div>
+          <div class="info">
+            <a href="./Profile.html">Edit Profile</a>
+            <a href="./Scores.html">Scoreboard</a>
+            <a href="./Ratings.html">Ratings</a>
+            <a id="sign-out" href="#">Sign Out</a>
+            <div class="game-music">
+              <span>Game Music</span>
+              <div class="btn"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+
+      <article class="main-content">
+        <div class="intro">
+          <img class="home-img" src="./images/home-img.png" alt="home-img" />
+          <h1>Get ready for some classic fun!</h1>
+          <p>Choose your weapon: Rock, Paper, or Scissors.</p>
+          <p>Click on your selection to make your move.</p>
+          <button>Start Playing!</button>
+        </div>
+        <!--==Actual Game==-->
+        <div class="actual--game">
+          <button class="back-btn">Back</button>
+          <p class="message">
+            # Select One button from Each side to submit a game
+          </p>
+          <p class="message"># Check your Scoreboard to view results</p>
+          <p class="message"># You will play <b>8</b> games only.</p>
+          <div class="game-boxes">
+            <div class="default-bnts box">
+              <button data-name="Rock">Rock</button>
+              <button data-name="Paper">Paper</button>
+              <button data-name="Scissors">Scissors</button>
+            </div>
+            <div class="to-select-btns box">
+              <!--==Btns==-->
+            </div>
+          </div>
+          <div class="submit-btn">
+            <button disabled>Submit Game</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!--==== Footer ====-->
+    <footer>
+      <p>&copy; Elvis Okumu #RSP game 2024</p>
+    </footer>
+
+    <!--==== Utilities ====-->
+    <section class="utilities">
+      <audio class="audio" controls>
+      </audio>
+      <div class="alert-box">
+        <div class="box">
+          <h2>Game Over!</h2>
+          <span>You scored 6/8 </span>
+          <p>Would you like to play again?</p>
+          <div class="btns">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-message">
+        <!--Message-->
+      </div>
+    </section>
+
+    <script src="./Index.js"></script>
+  </body>
+</html>

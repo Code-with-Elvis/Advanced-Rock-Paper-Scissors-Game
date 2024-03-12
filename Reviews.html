@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User ratings</title>
+  <script src="https://kit.fontawesome.com/316c1c48c7.js" crossorigin="anonymous"></script>
+  <!-- Link Swiper's CSS -->
+  <link rel="icon" href="./images/Logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 62.5%;
+    }
+    body {
+      padding: 20px;
+      padding-top: 100px;
+      background-color: rgb(242, 245, 181);
+    }
+    h2 {
+      text-align: center;
+      color: #6c7403;
+      font-size: 2.4rem;
+      font-family: cursive;
+      margin-bottom: 50px;
+    }
+    .swiper {
+      max-width: 700px;
+      margin: auto;
+      height: auto;
+      position: relative;
+    }
+    .nav-btn {
+      color: #f33f23;
+    }
+    .swiper-slide {
+      width: 100%;
+      text-align: center;
+    }
+    .alert {
+      text-align: center;
+      width: 100%;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #f33f23;
+      text-decoration: underline;
+    }
+    .customer-message {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        line-height: 1.8;
+    }
+    .customer-name {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .customer-rate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding-bottom: 50px;
+    }
+    .stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      color: #88888890;
+    }
+    .stars i.active {
+      color: #0c810c;
+    }
+    .customer-rate span{
+      font-size: 15px;
+      color: #f33f23;
+      
+    }
+    .floating-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0c810c;
+      color: #FFF;
+      font-size: 1.25rem;
+    }
+   
+  </style>
+
+</head>
+<body>
+
+  <h2>What Our Gamers Say</h2>
+  
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!--////==slides will fall here==////-->
+    </div>
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <div class="swiper-pagination"></div>
+    
+  </div>
+  <!-- Swiper JS -->
+
+  <a href="./Ratings.html" class="floating-button">Back To Ratings</a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./Reviews.js"></script>
+</body>
+</html>

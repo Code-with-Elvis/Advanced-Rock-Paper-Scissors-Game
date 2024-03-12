@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Ratings</title>
+  <link rel="icon" href="./images/Logo.png" />
+  <script src="https://kit.fontawesome.com/316c1c48c7.js" crossorigin="anonymous"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 62.5%;
+    }
+    body {
+      padding: 20px;
+      padding-top: 100px;
+      background-color: rgb(242, 245, 181);
+    }
+    h2 {
+      text-align: center;
+      color: #6c7403;
+      font-size: 2.4rem;
+      font-family: cursive;
+      margin-bottom: 50px;
+    }
+    .rating {
+      border: 1px solid #444;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+    }
+    .rating.error {
+      border-color: #f33f23;
+    }
+    .stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #88888890;
+    }
+    .stars i.active {
+      color: #0c810c;
+    }
+    .expression {
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .expression span {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      position: absolute;
+    }
+    .rating-form {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .input-field {
+      margin-bottom: 15px;
+    }
+    .input-field input, textarea {
+      width: 100%;
+      padding: 10px;
+      background-color:transparent;
+      border: 1.5px solid #0c810c;
+      margin-bottom: 5px;
+      color: #222;
+    }
+    .input-field input.error,  textarea.error{
+      border-color: #f33f23;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+   
+    .input-field p {
+      font-size: 1.2rem;
+      color: #f33f23;
+      font-weight: 500;
+      display: none;
+      text-align: start;
+    }
+    .input-field p.error {
+      display: block;
+    }
+    .rating-form button {
+      background-color: #6c7403;
+      padding: 10px 30px;
+      font-size: 1.4rem;
+      outline: none;
+      border: 1px solid transparent;
+      box-shadow: 0 0 0 2px #f6acac, 0 0 0 3px #555, 0 0 10px #FFF;
+      border-radius: 10px;
+      color: #DDD;
+      cursor: pointer;
+    }
+    .floating-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #FFF;
+      font-size: 1.25rem;
+      background-color: #000;
+    }
+    .review-btn {
+      left: 100px;
+      background-color: #0c810c;
+    }
+    .alert-message {
+      display: none;
+      position: fixed;
+      top: 7ch;
+      transform: translateX(-50%);
+      left: 50%;
+      background-color: #249b5c;
+      width: 500px;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 1.4rem;
+      color: #FFF;
+      border-radius: 5px;
+      border: 1px dotted #FFF;
+    }
+    .alert-message.active {
+      display: block;
+    }
+    .alert-message span {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #CCC;
+      font-size: 1.2rem;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 80px 2rem;
+      }
+      .alert-message {
+        width: 94%;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <h2>Game Rating</h2>
+  <section class="rating">
+    <div class="stars">
+      <i class="fa-solid fa-star" data-id="1"></i>
+      <i class="fa-solid fa-star" data-id="2"></i>
+      <i class="fa-solid fa-star" data-id="3"></i>
+      <i class="fa-solid fa-star" data-id="4"></i>
+      <i class="fa-solid fa-star" data-id="5"></i>
+    </div>
+    <div class="expression">
+      <span></span>
+      <span >😥</span>
+      <span >😔</span>
+      <span >😝</span>
+      <span >😎</span>
+      <span >😀</span>
+    </div>
+  </section>
+
+  <article class="rating-form">
+    <form action="">
+      <div class="input-field">
+        <input id="name" type="text" placeholder="Your Name" readonly>
+        <p class="name-error">Error</p>
+      </div>
+      <div class="input-field">
+        <input id="email" type="email" placeholder="Your Email" readonly>
+        <p class="email-error">Error</p>
+      </div>
+      <div class="input-field">
+        <textarea id="message" placeholder="Enter Your Text"></textarea>
+        <p class="message-error">Error</p>
+      </div>
+      <button>Submit Ratings</button>
+    </form>
+  </article>
+
+  <a href="./Reviews.html" class="floating-button review-btn">Check Reviews</a>
+  <a class="floating-button" href="./index.html">Back</a>
+
+  <div class="alert-message">
+    <p><!--Message--></p> <span>X</span>
+  </div>
+
+
+<script src="./Ratings.js"></script> 
+</body>
+</html>

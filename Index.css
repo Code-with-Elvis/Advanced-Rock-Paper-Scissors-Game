@@ -1,0 +1,557 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+body {
+  min-height: 100vh;
+  background-color: #f7ce8f;
+  padding: 0 15px;
+  padding-bottom: 20px;
+  background-color: #000;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+/*
+=============#New User ====
+*/
+.no-account {
+  display: none;
+}
+.no-account.active {
+  display: block;
+}
+
+.no-account header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  z-index: 800;
+}
+.no-account header .logo {
+  display: inline-block;
+  font-size: 18px;
+  font-family: cursive;
+  font-weight: 600;
+  color: orangered;
+  padding: 4px 10px;
+  border: 1.5px solid #FFF;
+}
+.no-account header .buttons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+}
+.no-account header .buttons a {
+  color: #FFF;
+}
+.no-account header .buttons a:nth-child(2) {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background-color: blue;
+  color: #FFF;
+  box-shadow: 0 0 5px #FFF;
+}
+.no-account .main {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+.no-account .main img {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+}
+.no-account .main .details h2 {
+  margin-bottom: 20px;
+  color: #FFF;
+  font-size: 30px;
+}
+.no-account .main .details .txt {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #EEE;
+}
+.no-account .main .details h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #59e459;
+  text-decoration: underline ;
+}
+.no-account .main .details dl {
+  margin-bottom: 20px;
+}
+.no-account .main .details dl dt {
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #EEE;
+}
+.no-account .main .details dl dd {
+  line-height: 1.5;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  font-size: 16px;
+  color: #EEE;
+  padding-left: 15px;
+  position: relative;
+}
+.no-account .main .details dl dd::before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border: 1px solid #FFF;
+  left: 0;
+  top: 8px;
+  border-radius: 50%;
+}
+.no-account .main .details ul {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+.no-account .main .details ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #EEE;
+  position: relative;
+  padding-left: 15px;
+}
+.no-account .main .details ul li::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border: 1px solid #EEE;
+  background-color: #EEE;
+  left: 0;
+  top: 9px;
+}
+footer {
+  color: #59e459;
+  font-style: oblique;
+  font-size: 14px;
+  padding: 0 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media screen and (max-width:800px) {
+  .no-account .main {
+    grid-template-columns: 1fr;
+  }
+  .no-account .main img {
+    position: static;
+    height: 300px;
+    object-fit: cover;
+  }
+  .no-account .main .details h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:500px) {
+  .no-account .main img {
+    position: static;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+/*
+=============#Have Account ====
+*/
+
+.successful-login {
+  display: none;
+}
+.successful-login.active {
+  display: block;
+}
+.successful-login  header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  z-index: 800;
+}
+.successful-login  header .logo {
+  display: inline-block;
+  font-size: 18px;
+  font-family: cursive;
+  font-weight: 600;
+  color: orangered;
+  padding: 4px 10px;
+  border: 1.5px solid #FFF;
+}
+.successful-login  header h4 {
+  color: transparent;
+  -webkit-text-stroke: .5px #FFF;
+  letter-spacing: .5px;
+  font-size: 13px;
+  font-weight: 600;
+  width: 135px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width:355px){
+  .successful-login  header h4 {
+    display: none;
+  }
+}
+.successful-login  header .player {
+  position: relative;
+}
+.successful-login  header .player .avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #FFF;
+  display: grid;
+  place-items: center;
+  color: #222;
+  border-radius: 50%;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.successful-login  header .player .avatar.active::before {
+  position: absolute;
+  content: "X";
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  color: #FFF;
+  display: grid;
+  place-items: center;
+}
+
+.successful-login  header .player .info {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #FFF;
+  right: 0;
+  top: 120%;
+  padding: 20px 15px;
+  width: 160px;
+}
+.successful-login  header .player .info.active {
+  display: block;
+}
+.successful-login  header .player .info a {
+  color: #EEE;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.successful-login  header .player .info .game-music {
+  color: #FFF;
+  color: #EEE;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.successful-login  header .player .info .game-music .btn {
+  position: relative;
+  background-color: #ede3d4;
+  width: 30px;
+  height: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.successful-login  header .player .info .game-music .btn span {
+  position: absolute;
+  left: 1.5px;
+  transform: translateY(-50%);
+  top: 50%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: .1s ease all;
+}
+.successful-login  header .player .info .game-music .btn.active span {
+  left: 16.5px;
+}
+.audio {
+  position: fixed;
+  visibility: hidden;
+}
+.home-img {
+  display: block;
+  margin: auto;
+  width: 200px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.main-content .intro {
+  color: #FFF;
+  margin-top: 40px;
+  text-align: center;
+}
+.main-content .intro h1 {
+  margin-top: 40px;
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #59e459;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+.main-content .intro p {
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.main-content .intro button {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  padding: 15px 35px;
+  font-weight: 600;
+  border: none;
+  color: #b80404;
+  border-radius: 25px;
+  background-color: orange;
+  cursor: pointer;
+  transition: .1s ease all;
+}
+.main-content .intro button:hover {
+  box-shadow: 0 0 5px #FFF;
+}
+
+/*
+=============#Have Account ====
+*/
+.main-content.active .intro {
+  display: none;
+}
+
+/*
+=============#Actual Game ====
+*/
+.main-content.active .actual--game {
+  display: block;
+}
+.actual--game {
+  display: none;
+}
+.back-btn {
+  padding: 6px 20px;
+  color: #BBB;
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 0 2px #AAA;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom:25px ;
+}
+.back-btn:hover {
+  background-color: #AAA;
+  color: #111;
+}
+.message {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #FFF;
+  font-size: 14px;
+}
+.message:first-child {
+  margin-top: 30px;
+}
+.game-boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+.game-boxes .box {
+  padding: 30px 20px;
+  width: 250px;
+  border: 1px dotted #59e459;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 8px;
+}
+.game-boxes .box button.active {
+  border: 2px solid #0493f9;
+}
+.game-boxes .box button {
+  width: 100px;
+  padding: 8px 0;
+  background-color: #FFF;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+.game-boxes .box button:hover {
+  background-color: #0891f4;
+}
+.game-boxes .to-select-btns button::before {
+  position: absolute;
+  content: "";
+  background-color: #FFF;
+  inset: 0;
+  border-radius: 2px;
+  display: block;
+}
+.game-boxes .to-select-btns button.submit::before {
+  display: none;
+}
+.submit-btn {
+  margin-top: 15px;
+  text-align: center;
+}
+.submit-btn button {
+  padding: 14px 40px;
+  border: none;
+  background-color: blue;
+  color: #FFF;
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.submit-btn button:disabled {
+  cursor: no-drop;
+  opacity: .2;
+}
+
+
+@media screen and (max-width: 550px) {
+  .game-boxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/*
+=============#Game Over ====
+*/
+.alert-box {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background-color: #000000dc;
+  z-index: 1000;
+}
+.alert-box.active {
+  display: grid;
+}
+.alert-box .box {
+  background-color: #FFF;
+  width: 300px;
+  text-align: center;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px red, 0 0 0 5px #FFF;
+}
+.alert-box .box h2 {
+  margin-bottom: 20px;
+  color: #222;
+}
+.alert-box .box  span {
+  margin-bottom: 20px;
+  display: inline-block;
+  color: orangered;
+  font-size: 16px;
+}
+.alert-box .box  p {
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  color: #111;
+}
+.alert-box .box .btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+.alert-box .box .btns button {
+  padding: 5px 10px;
+  border: none;
+  background-color: green;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.alert-box .box .btns button:nth-child(2) {
+  background-color: transparent;
+  color:red;
+  border: 1px solid red;
+}
+
+/*
+=============#Game Message ====
+*/
+.game-message {
+  position: fixed;
+  display: none;
+  top: 68px;
+  background-color: #f0512d;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 800;
+  padding: 20px 15px;
+  color: #FFF;
+  border: 1px dotted #FFF;
+  box-shadow: 0 0 10px #CCC;
+  width: 350px;
+  font-size: 14.5px;
+}
+.game-message::before {
+  height: 5px;
+  background-color: #FFF;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.game-message.active {
+  display: block;
+}
+.game-message.active::before {
+  animation: toast linear 4s 1;
+}
+@keyframes toast {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .game-message {
+    width: 94%;
+  }
+}
